@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="msapplication-tap-highlight" content="no"/>
+	
+	<title>VMS의원</title>
+	
+	<!--보어컴퍼넌츠-->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css">
+	<link rel="stylesheet" href="bower_components/Waves/dist/waves.min.css"> 
+	<link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">	
+
+	<link rel="stylesheet" href="js/selects/cs-select.css">
+	<link rel="stylesheet" href="js/selects/cs-skin-elastic.css">
+
+	<link rel="stylesheet" href="bower_components/c3/c3.min.css">
+	<link rel="stylesheet" href="bower_components/zabuto_calendar/zabuto_calendar.min.css">
+    <script src="js/menu/modernizr.custom.js"></script>
+
+	
+	    <!--Custom Scripts-->
+
+ 
+	<!--CSS-->
+	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/chat.css">	
+ 
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	
+	<!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+      <script src="bower_components/respondJs/dest/respond.min.js"></script>
+    <![endif]-->		
+</head>
+
+<body onload=" realTime();">
+
+
+
+	<!--처음에 로드되는 페이지-->
+	<div id="preloader" class="preloader table-wrapper">
+		<div class="table-row">
+			<div class="table-cell">
+				<div class="la-ball-scale-multiple la-3x">
+					<div></div>
+					<div></div>
+					<div></div>					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	<!--메인을 싸고 있는 컨테이너-->
+	<div id="main-wrapper" class="main-wrapper">
+		
+	<!--맨위에 고정된 헤더1-->
+		<ul id="gn-menu" class="gn-menu-main">
+			<li>
+				<a href="index2.html" class="logo">VMS<i class="fa fa-2x fa-plus-square"></i></a>
+			</li>
+	<!--검색-->		
+			<li>
+			  <form>
+				<div class="contacts-search">
+				  <input type="text" class="search-input" placeholder="검색해주세요"/>
+				  <button class="btn search-btn waves" type="button"><i class="fa fa-search"></i></button>
+				</div>
+			  </form>			
+			</li>
+			<li>
+				<span id="clock"></span>
+            </li>
+			<li class="pull-right">
+				<ul class="nav navbar-right right-menu">
+				
+			<!--그래프-->	
+				  <li class="dropdown notifications">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-2x fa-bar-chart-o"></i>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="fa fa-2x fa-area-chart"></i>Area chart</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="fa fa-2x fa-bar-chart"></i>Bar chart</a></li>
+						<li class="divider"></li>							
+						<li><a href="#"><i class="fa fa-2x fa-line-chart"></i>Line chart</a></li>
+						<li class="divider"></li>						
+						<li><a href="#"><i class="fa fa-2x fa-pie-chart"></i>Pie chart</a></li>						
+					</ul>
+				  </li>			
+				
+				
+				<!--개월수-->
+				  <li class="dropdown notifications">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-2x fa-calendar-plus-o"></i>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">1개월</a></li>
+						<li class="divider"></li>							
+						<li><a href="#">2개월</a></li>
+						<li class="divider"></li>							
+						<li><a href="#">3개월</a></li>
+						<li class="divider"></li>
+					</ul>
+				  </li>
+				<!--사람들이 확인해달라고...-->
+				  <li class="dropdown notifications">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+					  <i class="fa fa-2x fa-commenting-o"></i> <span class="label label-danger">3</span>
+					</a>
+					<ul class="dropdown-menu">
+					  <li>
+						<h4 class="zero-m text-center">Notifications</h4>
+					  </li>
+					  <li>
+						<div class="messages">
+						  <div class="member-info">
+							<img src="img/team/admin.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">김철수고객 730823</span>
+							<p class="members-message zero-m">운동 후 데이터라 데이터...</p>
+						  </div>
+						  <div class="member-info">
+							<img src="img/team/member.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">박영희고객 730823</span>
+							<p class="members-message zero-m">처방해 주신대로 운동중</p>
+						  </div>
+						  <div class="member-info">
+							<img src="img/team/admin.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">김소영고객 901090</span>
+							<p class="members-message zero-m">제 데이터 확인해주세요</p>
+						  </div>
+						  <div class="member-info">
+							<img src="img/team/member.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">김민규고객 880921</span>
+							<p class="members-message zero-m">방문 예약해주세요</p>
+						  </div>
+						</div>
+					  </li>
+					</ul>
+				  </li>				  
+				<!--알림-->
+				  <li class="dropdown notifications">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+					  <i class="fa fa-2x fa-lightbulb-o"></i>  <span class="label label-danger">4</span>
+					</a>
+					<ul class="dropdown-menu">
+					  <li>
+						<h4 class="zero-m text-center">Notifications</h4>
+					  </li>
+					  <li>
+						<div class="messages">
+						  <div class="member-info">
+							<img src="img/team/admin.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">김철수고객 730823</span>
+							<p class="members-message zero-m">혈압.체온 비정상 확인필요</p>
+						  </div>
+						  <div class="member-info">
+							<img src="img/team/member.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">박영희고객 730823</span>
+							<p class="members-message zero-m">체온 비정상 확인필요</p>
+						  </div>
+						  <div class="member-info">
+							<img src="img/team/admin.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">김소영고객 901090</span>
+							<p class="members-message zero-m">혈압 비정상 확인필요</p>
+						  </div>
+						  <div class="member-info">
+							<img src="img/team/member.png" alt="admin" class="img-circle pull-left">
+							<span class="member-name">김민규고객 880921</span>
+							<p class="members-message zero-m">혈압.체온 비정상 확인필요</p>
+						  </div>
+						</div>
+					  </li>
+					</ul>
+				  </li>
+				  <!--설정-->
+				  <li class="dropdown notifications">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-2x fa-cog"></i>
+					</a>
+				  </li>				  
+				</ul>
+			</li>	
+			
+		</ul>
+		<ul id="gn-menu" class="gn-menu-main1"">
+
+			<div class="row">
+			<!--위젯1-->
+			
+					<div class="col-sm-5 col-lg-2">
+					  <div class="content-box ultra-widget">
+						<div class="w-content big-box">
+						  <div class="w-progress">
+							<span class="w-amount blue">2231명</span>
+							<br>
+							<span class="text-uppercase w-name">총 내원 환자</span>
+						  </div>
+						  <!--progress bar
+						  <div class="progress progress-bar-sm zero-m">
+							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="2231" aria-valuemin="0" aria-valuemax="10000" style="width: 20%">
+							</div>
+						  </div>
+						  <div class="w-status clearfix">
+							<div class="w-status-title pull-left text-uppercase">Progress</div>
+							<div class="w-status-number pull-right text-uppercase">2231명</div>
+						  </div>
+						  -->
+						</div>
+					  </div>
+					</div>
+
+				<!--위젯2-->	
+					<div class="col-sm-5 col-lg-2">
+					  <div class="content-box ultra-widget">
+						<div class="w-content big-box">
+						  <div class="w-progress">
+							<span class="w-amount green">4명</span>
+							<br>
+							<span class="text-uppercase w-name">신규 내원 환자</span>
+						  </div>
+						  <!--progress bar						  
+						  <div class="progress progress-bar-sm zero-m">
+							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%">
+							</div>
+						  </div>
+						  <div class="w-status clearfix">
+							<div class="w-status-title pull-left text-uppercase">Progress</div>
+							<div class="w-status-number pull-right text-uppercase">4명</div>
+						  </div>
+						  -->
+						</div>
+					  </div>
+					</div>
+				
+				<!--위젯3-->
+				<div class="col-sm-5 col-lg-2">
+				  <div class="content-box ultra-widget">
+					<div class="w-content big-box">
+					  <div class="w-progress">
+						<span class="w-amount red">7명</span>
+						<br>
+						<span class="text-uppercase w-name">전환 대기 환자</span>
+					  </div>
+					  <!--
+					  <div class="progress progress-bar-sm zero-m">
+						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
+						</div>
+					  </div>
+					  <div class="w-status clearfix">
+						<div class="w-status-title pull-left text-uppercase">Progress</div>
+						<div class="w-status-number pull-right text-uppercase">7명</div>
+					  </div>
+					  -->
+					</div>
+				  </div>
+				</div>
+			
+				<!--위젯4-->
+				<div class="col-sm-5 col-lg-2">
+				  <div class="content-box ultra-widget">
+					<div class="w-content big-box">
+					  <div class="w-progress">
+						<span class="w-amount yellow">2200명</span>
+						<br>
+						<span class="text-uppercase w-name">정상</span>
+					  </div>
+					  <!--
+					  <div class="progress progress-bar-sm zero-m">
+						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+						</div>
+					  </div>
+					  <div class="w-status clearfix">
+						<div class="w-status-title pull-left text-uppercase">Progress</div>
+						<div class="w-status-number pull-right text-uppercase">52%</div>
+					  </div>
+					  -->
+					</div>
+				  </div>
+				</div>
+
+				<!--위젯5-->
+				<div class="col-sm-5 col-lg-2">
+				  <div class="content-box ultra-widget">
+					<div class="w-content big-box">
+					  <div class="w-progress">
+						<span class="w-amount yellow">31명</span>
+						<br>
+						<span class="text-uppercase w-name">비정상</span>
+					  </div>
+					  <!--
+					  <div class="progress progress-bar-sm zero-m">
+						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100" style="width: 31%">
+						</div>
+					  </div>
+					  <div class="w-status clearfix">
+						<div class="w-status-title pull-left text-uppercase">Progress</div>
+						<div class="w-status-number pull-right text-uppercase">31명</div>
+					  </div>
+					  -->
+					</div>
+				  </div>
+				</div>
+
+				
+			</div>			
+
+		</ul>
+		
+		
+
+		<!--고객전송 Data-->
+		<div id="content" class="content">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="page-header">
+						<h2>고객 전송 Data</h2>
+					</div>
+					
+				<!--차트시작-->	
+					<div class="row">
+					<!--차트1-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">체온</h4>
+							  <!--버튼 없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>
+
+					<!--차트2-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">심박</h4>
+							  <!--버튼 없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>
+
+					<!--차트3-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">혈압</h4>
+							  <!--버튼 없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>						
+
+					<!--차트4-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">체중</h4>
+							  <!--버튼없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>						
+					</div>
+					<!--차트끝-->
+					
+					<div class="row">
+						<div class="page-header" style="margin-left:11px;">
+							<h2>병원 진료 Data</h2>
+						</div>
+					</div>
+					
+				<!--차트시작-->	
+					<div class="row">
+					<!--차트1-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">체온</h4>
+							  <!--버튼없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>
+
+					<!--차트2-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">심박</h4>
+							  <!--버튼없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>
+
+					<!--차트3-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">혈압</h4>
+							  <!--버튼없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>						
+
+					<!--차트4-->
+						<div class="col-lg-3">
+						  <div class="content-box">
+							<div class="content-title big-box i-block">
+							  <h4 class="zero-m">체중</h4>
+							  <!--버튼없애기
+							  <div class="content-tools i-block pull-right">
+								<a class="repeat-btn">
+								  <i class="fa fa-repeat"></i>
+								</a>
+								<a class="dropdown-toggle" data-toggle="dropdown">
+								  <i class="fa fa-chevron-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Option 1</a></li>
+								  <li><a href="#">Option 2</a></li>
+								</ul>
+								<a class="close-btn">
+								  <i class="fa fa-times"></i>
+								</a>
+							  </div>
+							  -->
+							</div>
+							<div class="clearfix"></div>
+							<div class="big-box">
+							  <div id="line-chart-1" class="flot-chart"></div>
+							</div>
+						  </div>
+						</div>						
+					</div>
+					<!--차트끝-->					
+					
+
+					
+				</div>
+				
+		<!--채팅-->		
+				<div class="col-lg-3 chatWrapper">
+				  <div id="chatBox" class="content-box big-box chat">
+
+					<div class="content-title i-block">
+					  <h4 class="zero-m">채팅</h4>
+					  <div class="content-tools i-block pull-right">
+						<a class="repeat-btn">
+						  <i class="fa fa-repeat"></i>
+						</a>
+						<a class="dropdown-toggle" data-toggle="dropdown">
+						  <i class="fa fa-chevron-down"></i>
+						</a>
+						<ul class="dropdown-menu">
+						  <li><a href="#">Config option 1</a></li>
+						  <li><a href="#">Config option 2</a></li>
+						</ul>
+						<a class="close-btn">
+						  <i class="fa fa-times"></i>
+						</a>
+					  </div>
+					</div>
+
+					<!--버블채팅창-->
+					<div id="bubble-wrap">
+
+						  <div class="bubble">
+							<p>안녕하세요</p>
+						  </div>
+						 
+						 
+						  <div class="bubble bubble-alt docyellow">
+							<p>네 안녕하세요</p>
+						  </div>
+						 
+						  <div class="bubble">
+							<p>진료하신 결과 나왔습니다</p>
+						  </div>
+						 
+						  <div class="bubble">
+							<p>혈압, 맥박 다 정상이시네요</p>
+						  </div>
+						 
+						  <div class="bubble bubble-alt docyellow">
+							<p>아 그렇군요</p>
+						  </div>
+						  
+						  <div class="bubble bubble-alt docyellow">
+							<p>언제쯤 다시 방문하면 될까요</p>
+						  </div>
+
+						  <div class="bubble bubble-alt docyellow">
+							<p>12월 2일 3시로 예약가능할까요</p>
+						  </div>					  
+
+						  <div class="bubble">
+							<p>네~! 12월 2일 3시로 예약잡아드리겠습니다.</p>
+						  </div>
+
+						  <div class="bubble bubble-alt docyellow">
+							<p>감사합니다.</p>
+						  </div>
+
+						  <div class="bubble">
+							<p>좋은하루 보내세요</p>
+						  </div>					  
+
+
+					</div> 
+
+
+										
+										
+					<!--버블채팅창-->					
+					
+
+					<div class="input-group">
+					  <input type="text" class="form-control" placeholder="입력하세요">
+					  <span class="input-group-btn">
+						<button class="btn btn-warning text-uppercase waves" type="button">Send</button>
+					  </span>
+					</div>
+					
+				  </div>
+				</div>
+
+				
+			</div>
+		
+			
+			
+			
+			
+		</div>
+
+
+
+		  
+		  
+	    </div><!--메인래퍼-->	  
+		  
+		  
+		  
+		  
+
+
+
+
+	
+	
+	
+
+  <!--Scripts-->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="bower_components/Waves/dist/waves.min.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="bower_components/slimScroll/jquery.slimscroll.min.js"></script>
+  <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+  <script src="bower_components/cta/dist/cta.min.js"></script>
+  
+  <!--Menu-->
+  <script src="js/menu/classie.js"></script>
+  <script src="js/menu/gnmenu.js"></script>
+
+  <!--Selects-->
+  <script src="js/selects/selectFx.js"></script>
+
+  <!--Flot-->
+  <script src="bower_components/flot/jquery.flot.js"></script>
+  <script src="bower_components/flot/jquery.flot.resize.js"></script>
+  <script src="bower_components/flot.curvedlines/curvedLines.js"></script>
+  <script src="js/flot/jquery.flot.orderBars.js"></script>
+
+  <!--Custom Flot Charts-->
+  <script src="js/flot/line-chart-1.js"></script>
+  <script src="js/flot/line-chart-2.js"></script>
+  <script src="js/flot/line-chart-3.js"></script>
+  <script src="js/flot/bar-chart.js"></script>
+
+  <!--C3.js-->
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script src="bower_components/c3/c3.min.js"></script>
+
+  <!--EasyPieChart-->
+  <script src="bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+
+  <!--Zabuto Calendar-->
+  <script src="bower_components/zabuto_calendar/zabuto_calendar.min.js"></script>
+
+  <!--Simple Weather-->
+  <script src="bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
+
+  <!--Notification-->
+  <script src="js/notifications/notificationFx.js"></script>
+  <script src="js/common.js"></script>
+  	<script src="js/chat.js"></script>
+
+  <script>
+    $(function () {
+
+      // show the notification
+      setTimeout(function () {
+        // create the notification
+        var notification = new NotificationFx({
+          message: '<span>Welcome back, John!</span>',
+          layout: 'attached',
+          effect: 'bouncyflip',
+          ttl: 4000,
+          wrapper: document.getElementById("welcome"),
+          type: 'notice', // notice, warning, success or error
+        });
+        notification.show();
+      }, 1200);
+
+      /*c3.js*/
+      var chart = c3.generate({
+        bindto: '#reg-history',
+        size: {
+          height: 90
+        },
+        data: {
+          columns: [
+            ['New users', 30, 35, 45, 33, 48, 54, 41, 66, 49, 43, 38, 46]
+          ]
+        },
+        legend: {
+          show: false
+        },
+        color: {
+          pattern: ['#fff']
+        },
+        point: {
+          r: 3
+        },
+        axis: {
+          x: {
+            show: false
+          },
+          y: {
+            show: false
+          }
+        }
+      });
+      //EasyPieChart
+      $('.easypiechart').easyPieChart({
+        lineCap: 'square',
+        trackColor: '#cccccc',
+        barColor: '#42b382',
+        lineWidth: 5,
+        scaleLength: 0
+      });
+
+      //Zabuto Calendar
+      $("#calendar-widget").zabuto_calendar({
+        language: "en",
+        cell_border: false,
+        today: true,
+        show_days: true,
+        nav_icon: {
+          prev: '<i class="fa fa-chevron-left"></i>',
+          next: '<i class="fa fa-chevron-right"></i>'
+        }
+      });
+
+      //Simple Weather
+      /* Does your browser support geolocation? */
+      if ("geolocation" in navigator) {
+        $('#weather').show();
+      } else {
+        $('#weather').hide();
+      }
+
+      function geolocation() {
+        navigator.geolocation.getCurrentPosition(positionFound, positionNotFound)
+      }
+      geolocation();
+
+      function positionFound(position) {
+        loadWeather(position.coords.latitude + ',' + position.coords.longitude); //load weather using your lat/lng coordinates
+      }
+
+      function positionNotFound(error) {
+        $("#weather").html('<div class="big-box yellow">Permission to check your location is denied. To allow it go to your browser settings.</div>'); //showing warning message about browsers permissions
+      }
+
+
+      function loadWeather(location, woeid) {
+        $.simpleWeather({
+          location: location,
+          woeid: woeid,
+          unit: 'c',
+          success: function (weather) {
+            //Weather widget markup
+            html = '<div class="weather-container text-center"><h4 class="weather-city zero-m">Weather forecast in ' + weather.city + '</h4><div class="i-block big-box"><i class="block yellow icon-' + weather.forecast[0].code + '"></i>' + weather.forecast[0].day + ' / ' + weather.forecast[0].high + '&deg;C</div>';
+            html += '<div class="i-block big-box"><i class="block blue icon-' + weather.forecast[1].code + '"></i>' + weather.forecast[1].day + ' / ' + weather.forecast[1].high + '&deg;C</div>';
+            html += '<div class="i-block big-box"><i class="block red icon-' + weather.forecast[2].code + '"></i>' + weather.forecast[2].day + ' / ' + weather.forecast[2].high + '&deg;C</div></div>';
+
+
+            $("#weather").html(html);
+          },
+          error: function (error) {
+            $("#weather").html('<p>' + error + '</p>');
+          }
+        });
+      }
+
+      //Tooltips for Flot Charts
+      if ($(".flot-chart")[0]) {
+        $(".flot-chart").bind("plothover", function (event, pos, item) {
+          if (item) {
+          var x = item.datapoint[0].toFixed(2),
+            y = item.datapoint[1].toFixed(2);
+
+          $(".flot-tooltip").html(x + " of " + y)
+            .css({top: item.pageY+5, left: item.pageX+5})
+            .fadeIn(200);
+        } else {
+          $(".flot-tooltip").hide();
+        }
+        });
+
+        $("<div class='flot-tooltip'></div>").appendTo("body");
+      }
+
+    });
+  </script>
+</body>
+
+</html>

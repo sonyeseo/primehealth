@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+ 
+.bubble {
+  box-sizing: border-box;
+  width: auto;
+  max-width: 80%;
+  position: relative;
+  clear: both;
+  background:#00bfff;
+  
+
+
+  /*그라데이션*/
+  /*background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.0, #bee2ff), color-stop(1, #95c2fd)); /*크롬, 사파리 적용*/
+  /*background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%); /*크롬, 사파리 적용*/
+  /*background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%); /*파이어폭스 적용*/
+  /*background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%); /*익스플로러 IE10*/
+  /*background-image: -o-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%); /*오페라 브라우져*/
+  /*background-image: linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%); /*W3C*/
+  /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95c2fd', endColorstr='#bee2ff'); /*Invalid*, but works in 6-8 익스플로러 6~8에서 지원*/
+ 
+ 
+  -webkit-border-radius: 20px; /*크롬, 사파리 적용*/
+  -moz-border-radius: 20px; /*파이어폭스 적용*/
+  border-radius: 8px; /*일반 보더 레디어스*/
+ 
+  /*박스 쉐도우*/
+  /*-webkit-box-shadow: inset 0 0px 0px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px #e7ebec;*/
+  
+  margin-bottom: 16px;
+  padding: 10px 15px 2px 15px;
+  color: #fff;
+}
+
+
+.bubble:before, .bubble:after {
+  border-radius: 20px / 5px; /*화살표 꺽임*/
+  content: ''; /*컨텐츠 아무것도 없음*/
+  display: block; /*블록*/
+  position: absolute; /*절대값*/
+}
+.bubble:before {
+  border: 10px solid transparent;
+  border-bottom-color: rgba(0,0,0,0.5);
+  bottom: 0px;
+  left: -20px;
+  z-index: -2;
+}
+.bubble:after {
+  border: 8px solid transparent;
+  border-bottom-color: #00bfff; /* arrow color */
+  bottom: 0px;
+  left: -8px; /*화살표 위치조정*/
+}
+
+
+/*오른쪽 버블*/
+.bubble-alt {   
+  float: right;
+}
+.bubble-alt:before {
+  left: auto;
+  right: -30px;
+}
+.bubble-alt:after {
+  left: auto;
+  right: -5px;
+}
+ 
+.bubble p {
+  font-size: 1.3em; /*폰트 사이즈*/
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* yellow bubble */
+.docyellow {
+  color:#282828;
+  background: yellow;
+  
+  /*그라데이션*/
+  /*background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.15, #fcf3c3),color-stop(1, #f4e371)); /*크롬, 사파리 적용*/
+  /*background-image: -webkit-linear-gradient(bottom, #fcf3c3 15%, #f4e371 100%); /*크롬, 사파리 적용*/
+  /*background-image: -moz-linear-gradient(bottom, #fcf3c3 15%, #f4e371 100%); /*파이어폭스 적용*/
+  /*background-image: -ms-linear-gradient(bottom, #fcf3c3 15%, #f4e371 100%); /*익스플로러 IE10*/
+  /*background-image: -o-linear-gradient(bottom, #fcf3c3 15%, #f4e371 100%); /*오페라 브라우져*/
+  /*background-image: linear-gradient(bottom, #fcf3c3 15%, #f4e371 100%); /*W3C*/
+  /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f4e371', endColorstr='#fcf3c3'); /*Invalid*, but works in 6-8 익스플로러 6~8에서 지원*/
+  
+ -webkit-box-shadow: inset 0 0px 0px rgba(255,255,255,0.65), 0 1px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 1px rgba(0,0,0,0.2);
+  box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 1px #e7ebec;  
+  
+}
+.docyellow:after {
+  border-bottom-color: #ffff00;
+}

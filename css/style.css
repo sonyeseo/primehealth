@@ -1,0 +1,852 @@
+@charset "UTF-8";
+/*
+ *
+ *   ADVANTAGE - Responsive Admin Theme
+ *   version 1.1
+ *
+*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,500,300,700);
+
+/*로딩페이지*/
+.preloader {
+  z-index: 99999;
+  position: fixed !important;
+  height: 100%;
+  width: 100%;
+}
+
+/*!
+ * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Copyright 2015 Daniel Cardoso <@DanielCardoso>
+ * Licensed under MIT
+ */
+.la-ball-scale-multiple,
+.la-ball-scale-multiple > div {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.la-ball-scale-multiple {
+  display: block;
+  font-size: 0;
+  color: #63A8EB;
+  margin: 0 auto;
+}
+
+.la-ball-scale-multiple > div {
+  display: inline-block;
+  float: none;
+  background-color: currentColor;
+  border: 0 solid currentColor;
+}
+
+.la-ball-scale-multiple > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  opacity: 0;
+  -webkit-animation: ball-scale-multiple 1s 0s linear infinite;
+          animation: ball-scale-multiple 1s 0s linear infinite;
+}
+
+.la-ball-scale-multiple > div:nth-child(2) {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.la-ball-scale-multiple > div:nth-child(3) {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.la-ball-scale-multiple.la-3x {
+  width: 96px;
+  height: 96px;
+}
+
+.la-ball-scale-multiple.la-3x > div {
+  width: 98px;
+  height: 98px;
+}
+/*페이지로딩완료*/
+
+
+/*맨위에 메뉴*/
+.gn-menu-main,
+.gn-menu-main ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-transform: none;
+  font-weight: 300; /*글자굵기 300*/
+  line-height: 66px;
+  z-index: 1200;
+}
+
+.gn-menu-main {	
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  /*위 아래 그림자 기능*/
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+.gn-menu-main a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gn-menu-main > li {
+  display: block;
+  float: left;
+  height: 100%;
+  text-align: center;
+}
+
+.gn-menu-main > li > a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/*맨오른쪽에 있는 버튼들*/
+.gn-menu-main .navbar-right a {
+  padding: 0 30px !important;
+  font-size: 18px;
+  text-align: center;
+  height:55px;
+  right:40px;
+}
+
+/*VMS의원*/
+.gn-menu-main .logo {
+  line-height: 56px;
+  font-size: 28px;
+  font-weight:bold;
+  padding: 0 23px;
+}
+
+.gn-menu-main .logo i {
+  margin-left: 10px;
+  font-size:30px;
+}
+
+/*메뉴 누르면 사람들 뜨고...그 글자 간격*/
+.gn-menu-main .member-info {
+  line-height: 2;
+}
+
+/*맨위에 시간*/
+.top-clock {
+  line-height: 56px;
+  font-size: 24px;
+  font-weight: 300;
+  width: 120px;
+  position: absolute;
+  left: 50%;
+  margin-left: -60px;
+  top: 0;
+}
+
+/*오른쪽으로 끌어당기는*/
+.right-menu > li {
+  float: left;
+}
+
+/*버튼 옆에 숫자*/
+.right-menu .label {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 72%;
+}
+
+
+@media screen and (max-width: 422px) {
+  .gn-menu-main ul {
+    width: 100%;
+  }
+  .gn-menu-wrapper.gn-open-all {
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+    width: 100%;
+  }
+  .gn-menu-wrapper.gn-open-all .bottom-bnts a {
+    display: inline-block;
+    width: 49%;
+  }
+  .gn-menu-wrapper.gn-open-all .fix-nav {
+    display: none !important;
+  }
+}
+
+/*링크나 탭등의 포커스에 맞췄을때 투명하게...*/
+a, button {
+
+  text-decoration: none;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus, button:active {
+  outline: none !important;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/*전체바디*/
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #76828E;
+  padding-top: 56px;
+  font-size: 14px;
+  position: relative;
+  background: #F1F4F5;
+  overflow-x: hidden;
+}
+
+.main-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/*심박수 및 체온 및 잡다한 버튼*/
+.i-block {
+  display: inline-block;
+}
+
+
+/*프로그레스바 체온,심박,혈압....등*/
+.zero-m {
+  margin: 0 !important;
+}
+
+/*컨텐트 박스-전체 그리드*/
+.content {
+ 
+  
+  margin: 0;
+  padding:20px 0px 0px 66px;
+  background: #F1F4F5;
+  -webkit-transition: margin, .4s;
+          transition: margin, .4s;	
+
+
+  
+}
+
+/*각각 컨텐트 박스*/
+.content-box {
+  position: relative;
+  background: #fff;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.secondSector{
+	background: #4FC3F7;
+	width:100%;
+	position:fixed;
+	padding:10px 0px 0px 200px;
+	margin:0;	
+    z-index:20;	
+}
+
+/*박스안 패딩*/
+.big-box {
+  padding: 20px;
+}
+
+/*고객 전송 Data*/
+.page-header {
+  margin: 0;
+  padding-bottom: 15px;
+  padding-top: 20px;
+  border-bottom: 0;
+  width:150px;
+  height:100px;
+}
+
+/*체온,심박,혈압,체중 박스*/
+.content-title {
+
+  width: 100%;
+  position: relative;
+}
+
+/*체온,심박,혈압,체중 타이틀*/
+.content-title h4 {
+  display: inline-block;
+  float: left;
+}
+
+.content-tools > a {
+  margin-left: 28px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  opacity: .99;
+}
+
+/*체온,심박,혈압,체중 옆에 버튼 눌렀을때 그림자효과*/
+.content-tools > a:before {
+  content: "";
+  background: rgba(39, 50, 56, 0.25);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -5px;
+  left: -7px;
+  z-index: -1;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+          transition: transform .2s ease-in-out;
+}
+/*마지막 x자 버튼 위치*/
+.content-tools > a:last-child:before {
+  left: -9px;
+}
+/*글자 눌렀을때 색깔*/
+.content-tools > a:hover {
+  color: #fff;
+}
+
+.content-tools > a:hover:before {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+/*맨위에 물음표,전구 사람들 -드롭다운메뉴*/
+.member-info {
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.member-info img {
+  margin-right: 10px;
+}
+
+/*맨위에 드롭다운 메뉴*/
+.dropdown, .dropup {
+  display: inline-block;
+}
+
+/*드롭다운 메뉴의 밑에 모서리 둥글기 ...뭐 이런거*/
+.dropdown .dropdown-menu, .content-tools .dropdown-menu {
+  opacity: 0;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all .2s;
+          transition: all .2s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: block;
+  border-color: transparent;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+
+/*드롭다운메뉴에 글자*/
+.dropdown.notifications .dropdown-menu, .content-tools .dropdown-menu {
+
+  -webkit-transform-origin: top right;
+      -ms-transform-origin: top right;
+          transform-origin: top right;
+}
+/*드롭다운되는 내려가는 창*/
+.dropdown.open .dropdown-menu, .content-tools.open .dropdown-menu {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+/*체온,심박,혈압,체중 드롭다운*/
+.content-tools .dropdown-menu {
+  min-width: 150px;
+  margin-top: -5px;
+  margin-right: 28px;
+}
+
+/*알림창 드롭다운*/
+.notifications .dropdown-menu, .clock .dropdown-menu {
+  min-width: 240px;
+  padding: 10px;
+  background: #fff !important;
+}
+
+
+/*보내기 send 버튼*/
+.form-control, .form-control:focus {
+  border-color: #E7EBEC;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+
+/*검색해주세요*/
+.contacts-search{
+  min-height: 0px;
+  padding: 18px 0;
+}
+
+.contacts-search .search-input{
+  border: 1px solid #E7EBEC;
+  -webkit-border-radius: 3px 0 0 3px;
+          border-radius: 3px 0 0 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #8a8a8a;
+  float: left;
+  height: 25px;
+  padding: 0 0px;
+}
+
+.contacts-search .search-input:focus{
+  outline: none;
+}
+/*검색버튼*/
+.contacts-search .search-btn{
+  background: #63A8EB;
+  border: none;
+  -webkit-border-radius: 0 3px 3px 0;
+          border-radius: 0 3px 3px 0;
+  color: #fff;
+  height: 25px;
+  padding: 0 0;
+  margin:0px 0px 48px 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.contacts-search,{
+  position: relative;
+}
+
+.contacts-search form, .contacts-search .input-group{
+  width: 100%;
+}
+
+.contacts-search .search-input{
+  width: -webkit-calc(100% - 60px);
+  width: calc(100% - 60px);
+}
+
+.contacts-search .search-btn{
+  width: 60px;
+}
+
+/*채팅*/
+.chat .chat-container {
+  display: inline-block;
+  width: 98%;
+}
+
+.chat .content-title {
+
+  padding-bottom: 10px;
+}
+
+.chat ul::before {
+
+  content: none;
+}
+
+.chat .chat-double {
+	
+  margin-bottom: 0;
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+
+.chat .chat-double li {
+	
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.chat .chat-double li:before, .chat .chat-double li:after {	
+  content: " ";
+  display: table;
+}
+
+.chat .chat-double li:after {	
+  clear: both;
+}
+
+.chat .chat-double li .chat-panel {	
+  width: 46%;
+  float: left;
+  border: 1px solid #E7EBEC;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  background: #fff;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.chat .chat-double li .chat-panel:before {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #E7EBEC;
+  border-right: 0 solid #E7EBEC;
+  border-bottom: 10px solid transparent;
+  content: " ";
+}
+
+.chat .chat-double li .chat-panel:after {
+  position: absolute;
+  top: 11px;
+  right: -9px;
+  display: inline-block;
+  border-top: 9px solid transparent;
+  border-left: 9px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 9px solid transparent;
+  content: " ";
+}
+
+
+
+.chat .chat-double .chat-panel.blue-bg:after {
+  border-left: 9px solid #63A8EB;
+  border-right: 0 solid #63A8EB;
+}
+
+.chat .chat-double .chat-panel.light-blue-bg:after {
+  border-left: 9px solid #90c1f1;
+  border-right: 0 solid #90c1f1;
+}
+
+.chat .chat-double .chat-panel.red-bg:after {
+  border-left: 9px solid #E9585B;
+  border-right: 0 solid #E9585B;
+}
+
+
+/*채팅-여자*/
+.chat .chat-double > li.chat-inverted > .chat-panel {
+  float: right;
+}
+
+.chat .chat-double > li.chat-inverted > .chat-panel:before {
+  border-left-width: 0;
+  border-right-width: 10px;
+  left: -10px;
+  right: auto;
+}
+
+.chat .chat-double > li.chat-inverted > .chat-panel:after {
+  border-left-width: 0;
+  border-right-width: 9px;
+  left: -9px;
+  right: auto;
+}
+/*채팅사진*/
+.chat .user-avatar {
+  width: 40px;
+  height: 40px;
+  margin-left: 15px;
+  float: right;
+}
+/*남자측*/
+.chat .chat-panel {
+  width: 47% !important;
+  float: right !important;
+}
+
+.chat .chat-inverted .user-avatar {
+
+  margin-left: 0;
+  margin-right: 15px;
+  float: left !important;
+}
+
+.chat .chat-inverted .chat-panel {
+  float: left !important;
+}
+
+.chat .chat-inverted .chat-panel .readed {
+  left: auto;
+  right: -25px;
+}
+
+.readed {
+  position: absolute;
+  color: #76828E;
+  bottom: 5px;
+  left: -25px;
+}
+/*안시계*/
+.chat-heading i {
+  margin-right: 3px;
+}
+
+/*위젯*/
+.ultra-widget {
+  position: relative;
+
+  
+}
+
+.ultra-widget .progress-bar {
+  -webkit-transition: none;
+          transition: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*2231명 총 내원 환자*/
+.ultra-widget .w-content .w-progress {
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+/*총내원환자*/
+.ultra-widget .w-content .w-progress .w-name {
+
+  font-size: 16px;
+}
+/*2231명*/
+.ultra-widget .w-content .w-progress .w-amount {
+
+  font-size: 40px;
+}
+/*progress bar*/
+.ultra-widget .w-status {
+  margin-top: 5px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+
+.ultra-widget .w-name {
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.ultra-widget .w-amount {
+
+  font-size: 60px;
+  font-weight: 700;
+}
+
+
+
+/*플로우차트*/
+.flot-chart {
+
+  width: 100%;
+  height: 276px;
+}
+
+
+
+a, a:hover {
+  color: #63A8EB;
+}
+
+
+
+/*Skins*/
+/*맨위 상단 색깔-*/
+.gn-menu-main {
+  background-color:#4FC3F7;
+  color: #fff;
+}
+/*버튼 눌렀을떄 색*/
+.gn-menu-main li a:hover{
+	background-color:#4FC3F7;	
+}
+
+
+.gn-menu-main ul.gn-menu a.active {	
+  color: #fff;
+}
+
+.gn-menu-main a {
+  color: #fff;
+}
+
+.gn-menu-main .navbar-right a:focus {
+  background-color: #4FC3F7 !important;
+}
+
+.gn-menu-main .navbar-right .cs-select > span {
+  background: #4FC3F7;
+  border-color: #4FC3F7;
+  color: #fff;
+}
+
+.gn-menu-main .notifications > a:focus {
+  background-color: #4c9be8 !important;
+}
+
+.gn-menu-main .notifications ul {
+  color: #76828E;
+}
+
+#menu-toggle:hover span {
+  background: #fff !important;
+}
+
+#menu-toggle span {
+  background: #273238;
+}
+
+.gn-menu .arrow {
+  color: #76828E;
+}
+
+
+.content-tools a {
+  color: #76828E;
+}
+
+
+@media (max-width: 768px) {
+
+  /*Remove not useful elements from top navigation*/
+  .logo, .clock, .lang, .some-btn, .notifications {
+	  
+    display: none !important;
+  }
+  .contacts-search{
+          margin:0;
+          padding:14px 20px 0px 20px;		  
+  }
+  /*Remove margins from content block*/
+  .content {
+    border:1px solid black;
+    margin: 0;
+    padding: 20px 10px 40px;
+	display:none !important;
+  }
+
+}
+
+}
+@media (max-width: 767px) {
+
+  ul.chat-double:before {
+    left: 40px;
+  }
+  ul.chat-double > li > .chat-panel {
+    width: -webkit-calc(100% - 90px);
+    width: calc(100% - 90px);
+  }
+  ul.chat-double > li > .chat-badge {
+    left: 32px;
+    margin-left: 0;
+    top: 15px;
+  }
+  ul.chat-double > li > .chat-panel, .chat ul.chat-double > li.chat-inverted > .chat-panel {
+    float: right;
+  }
+  ul.chat-double > li > .chat-panel:before, .chat ul.chat-double > li.chat-inverted > .chat-panel:before {
+    border-left-width: 0;
+    border-right-width: 10px;
+    left: -10px;
+    right: auto;
+  }
+  ul.chat-double > li > .chat-panel:after, .chat ul.chat-double > li.chat-inverted > .chat-panel:after {
+    border-left-width: 0;
+    border-right-width: 9px;
+    left: -9px;
+    right: auto;
+  }
+ 
+
+}
+
+@media (min-width: 992px) and (max-width: 1366px) {
+  .ultra-widget .w-icon {
+    font-size: 90px;
+  }
+  .ultra-widget .w-name {
+    font-size: 16px;
+  }
+  .ultra-widget .w-amount {
+    font-size: 32px;
+  }
+  .ultra-widget .w-descr {
+    top: 10px;
+  }
+  .ultra-widget .w-descr .w-amount i {
+    font-size: 51px !important;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .ultra-widget .w-icon {
+    font-size: 90px;
+	border:1px solid black;
+  }
+  .ultra-widget .w-name {
+    font-size: 16px;
+  }
+  .ultra-widget .w-amount {
+    font-size: 32px;
+  }
+  .ultra-widget .w-descr {
+    top: 10px;
+  }
+  .ultra-widget .w-descr .w-amount i {
+    font-size: 51px;
+  }
+
+
+}
+
+@media only screen and (max-width: 450px) {
+  .content-tools > a {
+    margin-left: 18px;
+    display: inline-block;
+	border:1px solid black;
+  }
+  .gn-search-item input.gn-search {
+    width: 100%;
+  }
+
+
+}
+
+/*# sourceMappingURL=maps/style.css.map */
